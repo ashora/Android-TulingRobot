@@ -1,6 +1,6 @@
 package com.echo.tuling;
 
-import com.echo.tuning.R;
+import com.echo.tuling.R;
 
 import android.os.Bundle;
 import android.app.Activity;
