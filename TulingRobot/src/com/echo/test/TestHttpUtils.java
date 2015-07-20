@@ -11,5 +11,4 @@ public class TestHttpUtils extends AndroidTestCase{
 	String res = HttpUtils.doGet("Hi£¬ÄãºÃ¡£");
 	Log.d("TAG", res);
 	}
-
 }
