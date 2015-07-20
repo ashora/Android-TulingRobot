@@ -1,5 +1,5 @@
 # Android-TulingRobot
-学习图灵机器人API的使用以及ListView的使用
+
 **之前在[慕课网][1]学习了有关[图灵机器人][2]的使用，今天再回顾一下图灵机器人API的使用以及ListView多种Item布局时的处理进行巩固学习**
 [1]:http://www.imooc.com/
 [2]:http://www.tuling123.com/openapi/
