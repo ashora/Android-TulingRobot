@@ -7,11 +7,39 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.ProtocolException;
 import java.net.URLEncoder;
+import java.util.Date;
+
+import com.echo.bean.ChatMessage;
+import com.echo.bean.ChatMessage.Type;
+import com.echo.bean.Result;
+import com.google.gson.Gson;
 
 
 public class HttpUtils {
 	private static final String URL = "http://www.tuling123.com/openapi/api";
 	private static final String APIKEY = "1e72fa065762a6437081c7d29e506732";
+	
+	/**
+	 * 发送一个消息，得到返回的消息
+	 * @param msg
+	 * @return chatMessage
+	 */
+	public static ChatMessage sendMessage(String msg){
+		ChatMessage chatMessage = new ChatMessage();
+		String jsonRes = doGet(msg);
+		Gson gson = new Gson();
+		Result result = null;
+		try{
+		result = gson.fromJson(jsonRes, Result.class);
+		chatMessage.setMsg(result.getText());
+		}catch(Exception e)
+		{
+			chatMessage.setMsg("服务器繁忙，请稍候再试");
+		}
+		chatMessage.setDate(new Date());
+		chatMessage.setType(Type.INCOMING);
+		return chatMessage;
+	}
 	
 	public static String doGet(String msg){
 		String result = "";

@@ -21,6 +21,11 @@ public class ChatMessage {
 		this.date = date;
 	}
 	
+	public ChatMessage() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public String getName() {
 		return name;
 	}
